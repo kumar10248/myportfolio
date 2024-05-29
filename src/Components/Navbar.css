@@ -12,6 +12,12 @@
     font-size: 20px;
 
 }
+.navbar h1{
+    font-size: 40px;
+    font-weight: 600;
+margin-left: -280px;
+   
+}
 .nav-connect{
     padding: 20px 40px;
     border-radius: 50px;
@@ -37,6 +43,7 @@
     display: flex;
     margin: auto;
 }
+
 .anchor-link{
     text-decoration: none;
     color: white;
@@ -64,6 +71,12 @@
         position: fixed;
         right: 30px;
 
+    }
+    .navbar h1{
+      margin-right: 390px;
+        font-size: 40px;
+        font-weight: 600;
+    
     }
     .nav-mob-close{
         display: block;

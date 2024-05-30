@@ -16,13 +16,10 @@ const About = () => {
         <div className="about-right">
           <div className="about-para">
             <p>
-              Innovative blockchain developer with expertise in crafting secure
-              decentralized applications and smart contracts on Ethereum and
-              Hyperledger.
+            Passionate frontend developer with a knack for creating seamless user experiences and responsive web designs. 
             </p>
             <p>
-              Passionate about enhancing transaction transparency and efficiency
-              through robust blockchain protocols.
+            Skilled in HTML, CSS, JavaScript, and modern frameworks like React, committed to bringing innovative ideas to life on the web.
             </p>
           </div>
           <div className="about-skills">

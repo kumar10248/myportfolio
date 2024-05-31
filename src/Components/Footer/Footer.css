@@ -17,9 +17,11 @@ max-width: 400px;
 }
 .footer-top-right{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 35px;
 }
+
 .footer-email-input{
     display: flex;
     gap: 30px;

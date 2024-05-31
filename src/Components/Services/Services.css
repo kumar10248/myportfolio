@@ -100,8 +100,8 @@ margin: 20px 70px;
         width: 20px;
     }
     .services-container{
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr;
+      gap:30px;
 
     }
 }

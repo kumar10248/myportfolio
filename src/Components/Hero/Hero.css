@@ -3,6 +3,7 @@
     align-items: center;
     flex-direction: column;
     gap: 35px;
+  
 
 }
 .hero img{
@@ -57,12 +58,12 @@ background-clip: text;
 @media(max-width: 768px){
     .hero img{
         margin-top: 120px;
-        width: 260px;
+        width: 200px;
     }
     .hero h1{
         margin-top: 50px;
-        width: 90%;
-        font-size: 50px;
+        /* width: 90%; */
+        font-size: 30px;
     }
     .hero p{
         width: 60%;

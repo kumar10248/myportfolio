@@ -1,126 +1,64 @@
-.navbar {
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 170px;
 }
-
-.nav-menu {
+.nav-menu{
     display: flex;
     align-items: center;
     list-style: none;
     gap: 60px;
     font-size: 20px;
-}
 
-.navbar h1 {
+}
+.navbar h1{
     font-size: 40px;
     font-weight: 600;
-    margin-left: -280px;
+margin-left: -280px;
+   
 }
-
-.nav-connect {
+.nav-connect{
     padding: 20px 40px;
     border-radius: 50px;
     background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
     font-size: 22px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.5s; 
 }
-
-.nav-connect:hover {
+.nav-connect:hover{
     transform: scale(1.05);
-    padding: 20px 40px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+  padding: 20px 40px;
+  border-radius: 50px;
+  background:linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);; 
+  
 }
-
 .nav-menu li {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
 }
-
-.nav-menu li img {
+.nav-menu li img{
     display: flex;
     margin: auto;
 }
 
-.anchor-link {
+.anchor-link{
     text-decoration: none;
     color: white;
 }
-
-.nav-mob-close {
+.nav-mob-close{
     display: none;
 }
-
-.nav-mob-open {
+.nav-mob-close{
     display: none;
+
 }
+.nav-mob-open{
+    display: none;
 
-@media (max-width: 768px) {
-    .navbar {
-        margin: 20px 20px;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .navbar h1 {
-        margin-left: 0;
-        font-size: 30px;
-        margin-right: auto;
-    }
-
-    .nav-connect {
-        display: none;
-    }
-
-    .nav-mob-open {
-        display: block;
-        position: fixed;
-        right: 20px;
-        z-index: 3;
-        cursor: pointer;
-    }
-
-    .nav-mob-close {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 3;
-        cursor: pointer;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #1F0016;
-        z-index: 2;
-        transition: right 0.5s ease;
-        padding: 20px;
-        gap: 30px;
-    }
-
-    .nav-menu li {
-        font-size: 25px;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
 }
-
 @media(max-width:768px){
     .navbar{
         margin: 20px 50px;

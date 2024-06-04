@@ -120,7 +120,7 @@ const Contact = () => {
               Submit Now
             </button>
           ) : (
-            <Spinner color="#727981" size={32} speed={1} animating={true} />
+            <Spinner color="#00FF00" size={32} speed={1} animating={true} />
           )}
         </form>
         {message && (

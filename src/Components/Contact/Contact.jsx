@@ -5,6 +5,8 @@ import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
 import emailjs from 'emailjs-com';
+import { Spinner } from "react-activity";
+import "react-activity/dist/Spinner.css";
 
 const Contact = () => {
   const [message, setMessage] = useState("");
@@ -14,12 +16,14 @@ const [formData, setFormData] = useState({
     email: "",
     message: ""
 });
+const [isLoading, setIsLoading] = useState(false);
 const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
 
 }
   const onSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     // const formData = new FormData(event.target);
 
     // formData.append("access_key", "a970cecb-498b-4305-80b6-24ba7c41ed17");
@@ -46,12 +50,13 @@ const handleChange = (event) => {
       setMessageType("error");
       console.error("Error: ", error);
     }
-
+setIsLoading(false);
     // Clear the message after 3 seconds
     setTimeout(() => {
       setMessage("");
       setMessageType("");
     }, 3000);
+    
   };
 
   return (
@@ -111,9 +116,9 @@ const handleChange = (event) => {
             onChange={handleChange}
             required
           ></textarea>
-          <button type="submit" className="contact-submit">
+          {!isLoading? <button type="submit" className="contact-submit">
             Submit Now
-          </button>
+          </button>:<Spinner color="#727981" size={32} speed={1} animating={true} />}
         </form>
         {message && (
           <div className={`popup-message ${messageType}`}>{message}</div>

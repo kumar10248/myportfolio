@@ -4,7 +4,7 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 import { Spinner } from "react-activity";
 import "react-activity/dist/Spinner.css";
 
@@ -14,7 +14,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,7 +28,12 @@ const Contact = () => {
     console.log("Form Data: ", formData); // Debug: Check form data before sending
 
     try {
-      const result = await emailjs.send('service_ouguwtl', 'template_f4x3ky5', formData, 'Q7JlR25igI0JbUAdx');
+      const result = await emailjs.send(
+        "service_ouguwtl",
+        "template_f4x3ky5",
+        formData,
+        "Q7JlR25igI0JbUAdx"
+      );
       if (result.status === 200) {
         setMessage("Message sent successfully!");
         setMessageType("success");

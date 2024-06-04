@@ -9,17 +9,25 @@ import emailjs from 'emailjs-com';
 const Contact = () => {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState(""); // "success" or "error"
+const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+});
+const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
 
+}
   const onSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    // const formData = new FormData(event.target);
 
     // formData.append("access_key", "a970cecb-498b-4305-80b6-24ba7c41ed17");
 
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+    // const object = Object.fromEntries(formData);
+    // const json = JSON.stringify(object);
 
-    console.log("Form Data: ", json); // Debug: Check form data before sending
+    console.log("Form Data: ", formData); // Debug: Check form data before sending
 
     try {
 
@@ -81,6 +89,8 @@ const Contact = () => {
             type="text"
             placeholder="Enter your name"
             name="name"
+            value={formData.name}
+            onChange={handleChange}
             required
           />
           <label htmlFor="email">Your Email</label>
@@ -88,6 +98,8 @@ const Contact = () => {
             type="email"
             placeholder="Enter your email"
             name="email"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
           <label htmlFor="message">Write your message here</label>
@@ -95,6 +107,8 @@ const Contact = () => {
             name="message"
             rows="8"
             placeholder="Enter your message"
+            value={formData.message}
+            onChange={handleChange}
             required
           ></textarea>
           <button type="submit" className="contact-submit">

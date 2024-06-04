@@ -24,13 +24,6 @@ const handleChange = (event) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    // const formData = new FormData(event.target);
-
-    // formData.append("access_key", "a970cecb-498b-4305-80b6-24ba7c41ed17");
-
-    // const object = Object.fromEntries(formData);
-    // const json = JSON.stringify(object);
-
     console.log("Form Data: ", formData); // Debug: Check form data before sending
 
     try {

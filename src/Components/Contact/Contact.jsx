@@ -11,45 +11,46 @@ import "react-activity/dist/Spinner.css";
 const Contact = () => {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState(""); // "success" or "error"
-const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
-});
-const [isLoading, setIsLoading] = useState(false);
-const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+  });
+  const [isLoading, setIsLoading] = useState(false);
 
-}
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
   const onSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
     console.log("Form Data: ", formData); // Debug: Check form data before sending
 
     try {
-
-    emailjs.send('service_ouguwtl','template_f4x3ky5',formData,'Q7JlR25igI0JbUAdx').then((result) => {if (result.status === 200) {
-            setMessage("Message sent successfully!");
-            setMessageType("success");
-            console.log("Success", result);
-          } else {
-            setMessage("Submission failed. Please try again.");
-            setMessageType("error");
-            console.log("Failure", result)}}).catch((error) => {
-            setMessage("An error occurred. Please try again.");
-            setMessageType("error")});
+      const result = await emailjs.send('service_ouguwtl', 'template_f4x3ky5', formData, 'Q7JlR25igI0JbUAdx');
+      if (result.status === 200) {
+        setMessage("Message sent successfully!");
+        setMessageType("success");
+        console.log("Success", result);
+      } else {
+        setMessage("Submission failed. Please try again.");
+        setMessageType("error");
+        console.log("Failure", result);
+      }
     } catch (error) {
       setMessage("An error occurred. Please try again.");
       setMessageType("error");
       console.error("Error: ", error);
+    } finally {
+      setIsLoading(false);
     }
-setIsLoading(false);
+
     // Clear the message after 3 seconds
     setTimeout(() => {
       setMessage("");
       setMessageType("");
     }, 3000);
-    
   };
 
   return (
@@ -109,9 +110,13 @@ setIsLoading(false);
             onChange={handleChange}
             required
           ></textarea>
-          {!isLoading? <button type="submit" className="contact-submit">
-            Submit Now
-          </button>:<Spinner color="#727981" size={32} speed={1} animating={true} />}
+          {!isLoading ? (
+            <button type="submit" className="contact-submit">
+              Submit Now
+            </button>
+          ) : (
+            <Spinner color="#727981" size={32} speed={1} animating={true} />
+          )}
         </form>
         {message && (
           <div className={`popup-message ${messageType}`}>{message}</div>

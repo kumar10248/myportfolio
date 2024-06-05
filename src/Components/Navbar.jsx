@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
 <img src={theme_pattern} alt="" width={50}/>
-  <h1>Kumar</h1>
+  <h1><i>Kumar</i></h1>
 <img src={menu_open} onClick={openMenu} alt="" className='nav-mob-open' />
 <ul ref={menuRef} className='nav-menu'>
   <img  src={menu_close} onClick={closeMenu} alt="" className='nav-mob-close' />

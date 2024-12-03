@@ -10,7 +10,7 @@ const Hero = () => {
         <span>I'm Kumar Devashish,</span>Frontend developer based in India.
       </h1>
       <p>
-        I am a Frontend developer from Bihar, India with 2 years of experience.
+        I am a Full Stack(MERN) developer from Bihar, India with 2 years of experience.
       </p>
       <div className="hero-action">
         <div className="hero-connect">

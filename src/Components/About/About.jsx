@@ -16,7 +16,7 @@ const About = () => {
         <div className="about-right">
           <div className="about-para">
             <p>
-            Passionate frontend developer with a knack for creating seamless user experiences and responsive web designs. 
+            Passionate full stack developer with a knack for creating seamless user experiences and responsive web designs. 
             </p>
             <p>
             Skilled in HTML, CSS, JavaScript, and modern frameworks like React, committed to bringing innovative ideas to life on the web.
